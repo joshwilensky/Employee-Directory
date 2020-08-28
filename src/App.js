@@ -1,8 +1,8 @@
 // Imports
 import React from "react";
-import Header from "./components/Header";
-import Search from "./components/Search";
-import Table from "./components/Table";
+import Header from "./components/header";
+import Search from "./components/search";
+import Table from "./components/table";
 import axios from "axios";
 
 function App() {
