@@ -4,12 +4,14 @@ import Header from "./components/header";
 import Search from "./components/search";
 import Table from "./components/table";
 import axios from "axios";
+import './App.css'
 
 function App() {
   const [state, setState] = React.useState({
     base: [],
     employees: [],
   });
+
   React.useEffect(() => {
     axios
       .get("https://randomuser.me/api/?results=50")
@@ -22,13 +24,15 @@ function App() {
       })
       .catch((error) => console.warn(error.message));
   }, []);
+
   const handleChange = (e) => {
-    const searchTerm = e.target.value;
+    const searchTerm = e.target.value.toLowerCase();
     setState({
       // automatically renders
       ...state,
       employees: state.base.filter((employee) =>
-        employee.name.first.includes(searchTerm)
+        employee.name.first.toLowerCase().includes(searchTerm) ||
+        employee.name.last.toLowerCase().includes(searchTerm)
       ),
     });
   };
