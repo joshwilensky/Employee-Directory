@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+thead,
+tbody {
+  text-align: center;
+}
+
+thead {
+  font-size: x-large;
+
+}
+
+.jumbotron {
+  text-align: center;
+  background-color: dodgerblue;
+  color: darkblue;
+}
